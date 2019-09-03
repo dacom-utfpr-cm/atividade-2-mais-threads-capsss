@@ -22,22 +22,23 @@ public class Exercicio1 {
         Thread t2 = new Thread(grupo, new PrintThread());
         Thread t3 = new Thread(grupo, new PrintThread());
         
-        System.out.println("preparando as threads...");
-        System.out.println("threads executando: " + grupo.activeCount());
+        System.out.println("estado da thread " + t1.getId() + ": " + t1.getState());
+        System.out.println("estado da thread " + t2.getId() + ": " + t1.getState());
+        System.out.println("estado da thread " + t3.getId() + ": " + t1.getState());
         
         t1.start();
         t2.start();
         t3.start();
         
         try{
+            System.out.println("estado da thread " + t1.getId() + ": " + t1.getState());
+            System.out.println("estado da thread " + t2.getId() + ": " + t1.getState());
+            System.out.println("estado da thread " + t3.getId() + ": " + t1.getState());
             Thread.sleep(1000);
-            System.out.println("threads inicializadas");
-            System.out.println("threads executando: " + grupo.activeCount());
-        
+            System.out.println("estado da thread " + t1.getId() + ": " + t1.getState());
+            System.out.println("estado da thread " + t2.getId() + ": " + t1.getState());
+            System.out.println("estado da thread " + t3.getId() + ": " + t1.getState());
 
-            Thread.sleep(10000);
-            System.out.println("threads finalizadas");
-            System.out.println("threads executando: " + grupo.activeCount());
         } catch (InterruptedException ex) {
             Logger.getLogger(Exercicio1.class.getName()).log(Level.SEVERE, null, ex);
         }

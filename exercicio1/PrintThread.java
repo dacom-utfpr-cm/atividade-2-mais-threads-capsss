@@ -15,9 +15,8 @@ import java.util.logging.Logger;
 public class PrintThread  implements Runnable{
     @Override
     public void run() {
-        System.out.println("Thread " + Thread.currentThread().getId() + " executando");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             System.out.println("Thread " + Thread.currentThread().getId() + " finalizada");
         } catch (InterruptedException ex) {
             Logger.getLogger(PrintThread.class.getName()).log(Level.SEVERE, null, ex);
